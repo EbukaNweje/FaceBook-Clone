@@ -1,0 +1,324 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.login_page{
+    width: 100vw;
+    background-color: yellow;
+}
+
+.desktop_login_body{
+    width: 100%;
+    height: 100vh;
+    background-color: #f2f4f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.desktop_logo{
+    width: 260px;
+    height: 60px;
+    /* background-color: red; */
+}
+
+.desktop_logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.warning_container{
+    width: 40%;
+    height: 36px;
+    background-color: #fff;
+    border: 1px solid #3578e5;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.warning_login_logo_container{
+    width: 8%;
+    height: 100%;
+    background-color: #3578E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.warning_login_logo_container span{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1877f2;
+    font-weight: 600;
+}
+
+.warning_container p{
+    color: #000;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.desktop_login_form_container{
+    width: 30%;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .1), 0px 8px 16px rgba(0, 0, 0, .1);
+    /* border: 1px solid rgba(211, 211, 211, 0.774); */
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.desktop_login_form_container p{
+    color: #1C1E21;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form_warning{
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    background-color: #fff9d7;
+    border: 1px solid #e2c822;
+}
+
+.form_warning p{
+    font-size: 12px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.desktop_login_form_container input{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #dddfe2;
+    padding: 10px;
+    outline: none;
+    border-radius: 6px;
+    /* box-shadow: 0px 0px 2px 2px rgba(211, 211, 211, 0.274); */
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.desktop_login_form_container button{
+    width: 100%;
+    padding: 12px;
+    background-color: #1877f2;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.desktop_login_form_container span{
+    color: #1877f2;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.desktop_login_form_container span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.login_part{
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/loginbackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+    background-color: none;
+}
+
+.back_icon{
+    width: 90%;
+    height: 6%;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+}
+.arrow_left{
+    width: 7%;
+    height: 50%;
+    /* background-color: pink; */
+}
+
+.language{
+    width: 150px;
+    height: auto;
+    /* background-color: purple; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language > p{
+    font-size: 12px;
+    color: grey;
+}
+
+.arrow_down{
+    color: grey;
+}
+
+.facebook_icon{
+    width: 50px;
+    height: 50px;
+    background-color: #006AFF;
+    border-radius: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+}
+
+.login_Inputs{
+    width: 70%;
+    height: auto;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.input_div{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border-radius: 6px;
+    padding-left: 10px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #dddfe2;;
+}
+.input_div > input{
+    width: 94%;
+    height: 100%;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-family: 'Poppins';
+    background-color: transparent;
+}
+.void{
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.void > p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.login_btn{
+    width: 100%;
+    height: 45px;
+    background-color: #006AFF;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.forgot_password, .meta{
+    font-family: 'Poppins';
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.login_bottom{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.create_new_acct_btn{
+    width: 90%;
+    height: 45px;
+    background-color: transparent;
+    border: 1px solid #006AFF;
+    border-radius: 50px;
+    color: #006AFF;
+    font-size: 14px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.meta_logo{
+    width: 100%;
+    height: 30px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meta_icon{
+    width: 15%;
+    height: 90%;
+    /* background-color: orange; */
+}
+.meta_icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+@media screen and (max-width: 435px){
+
+    .desktop_login_body{
+        display: none;
+    }
+
+    .login_page{
+        height: 100vh;
+    }
+
+    .login_part{
+        display: flex;;
+    }
+
+    .login_Inputs{
+        width: 90%;
+    }
+
+}
