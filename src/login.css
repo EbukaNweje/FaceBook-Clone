@@ -223,7 +223,8 @@
     border: none;
     font-size: 14px;
     font-family: 'Poppins';
-    background-color: transparent;
+    /* background-color: transparent; */
+    color: #000;
 }
 .void{
     width: 20px;
